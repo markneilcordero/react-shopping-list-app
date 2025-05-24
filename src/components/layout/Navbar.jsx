@@ -6,7 +6,9 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
       <div className="container">
-        <Link className="navbar-brand fw-bold" to="/">Shopping List App</Link>
+        <Link className="navbar-brand fw-bold" to="/">
+          Shopping List App
+        </Link>
 
         <button
           className="navbar-toggler"
@@ -22,6 +24,11 @@ export default function Navbar() {
             <li className="nav-item">
               <NavLink to="/shopping-list" className="nav-link">
                 List
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/quick-log" className="nav-link">
+                Quick Log
               </NavLink>
             </li>
             <li className="nav-item">
