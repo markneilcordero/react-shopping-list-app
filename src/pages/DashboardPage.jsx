@@ -21,7 +21,10 @@ export default function DashboardPage() {
 
   useEffect(() => {
     const planned = getLocalData(LIST_KEY, []);
-    const quick = getLocalData(QUICK_LOG_KEY, []);
+    const quick = getLocalData(QUICK_LOG_KEY, []).map((item) => ({
+      ...item,
+      purchased: true, // ✅ mark Quick Log entries as purchased
+    }));
     const combined = [...planned, ...quick];
     setItems(combined);
   }, []);
