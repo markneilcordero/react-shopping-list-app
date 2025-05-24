@@ -7,20 +7,23 @@ import ChatWidget from "../components/chat/ChatWidget";
 import SummaryStats from "../components/dashboard/SummaryStats";
 import StatusChart from "../components/dashboard/StatusChart";
 import CategoryChart from "../components/dashboard/CategoryChart";
-import PriorityChart from "../components/dashboard/PriorityChart"; // Optional
-import HistoryChart from "../components/dashboard/HistoryChart";   // Optional
+import PriorityChart from "../components/dashboard/PriorityChart";
+import HistoryChart from "../components/dashboard/HistoryChart";
 
 import { getLocalData } from "../utils/localStorageHelpers";
 import { prepareChartData } from "../utils/chartDataHelpers";
 
-const STORAGE_KEY = "shopping-list-app-data";
+const LIST_KEY = "shopping-list-app-data";
+const QUICK_LOG_KEY = "shopping-quick-log";
 
 export default function DashboardPage() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const data = getLocalData(STORAGE_KEY, []);
-    setItems(data);
+    const planned = getLocalData(LIST_KEY, []);
+    const quick = getLocalData(QUICK_LOG_KEY, []);
+    const combined = [...planned, ...quick];
+    setItems(combined);
   }, []);
 
   const { statusData, categoryData, priorityData, historyData } =
@@ -30,7 +33,7 @@ export default function DashboardPage() {
     <div className="app-container d-flex flex-column min-vh-100">
       <Navbar />
       <main className="container my-4 flex-grow-1">
-        <h2 className="fw-bold text-center mb-4">📊 Shopping List Dashboard</h2>
+        <h2 className="fw-bold text-center mb-4">📊 Dashboard Overview</h2>
 
         <SummaryStats items={items} />
 
