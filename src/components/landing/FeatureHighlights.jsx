@@ -1,6 +1,12 @@
 // components/landing/FeatureHighlights.jsx
 import React from "react";
-import { FaRobot, FaChartPie, FaCloudUploadAlt, FaListAlt } from "react-icons/fa";
+import {
+  FaRobot,
+  FaChartPie,
+  FaCloudUploadAlt,
+  FaListAlt,
+  FaClipboardCheck,
+} from "react-icons/fa";
 
 export default function FeatureHighlights() {
   const features = [
@@ -23,6 +29,11 @@ export default function FeatureHighlights() {
       icon: <FaCloudUploadAlt className="text-info mb-2" size={40} />,
       title: "Backup & Restore",
       description: "Export and import your shopping list as JSON across devices.",
+    },
+    {
+      icon: <FaClipboardCheck className="text-danger mb-2" size={40} />,
+      title: "Quick Purchase Log",
+      description: "Log what you actually bought — even if you didn’t plan ahead with a list.",
     },
   ];
 

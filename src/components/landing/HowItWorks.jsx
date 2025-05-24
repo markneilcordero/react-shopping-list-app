@@ -1,6 +1,12 @@
 // components/landing/HowItWorks.jsx
 import React from "react";
-import { FaEdit, FaCheckCircle, FaChartBar, FaCloudDownloadAlt } from "react-icons/fa";
+import {
+  FaEdit,
+  FaCheckCircle,
+  FaChartBar,
+  FaCloudDownloadAlt,
+  FaClipboardList,
+} from "react-icons/fa";
 
 export default function HowItWorks() {
   const steps = [
@@ -23,6 +29,11 @@ export default function HowItWorks() {
       icon: <FaCloudDownloadAlt className="text-info" size={36} />,
       title: "4. Backup & Sync",
       description: "Export your data for backup or import it on another device to continue where you left off.",
+    },
+    {
+      icon: <FaClipboardList className="text-danger" size={36} />,
+      title: "5. Quick Purchase Log",
+      description: "Forgot to plan ahead? Log what you bought after shopping and keep your history complete.",
     },
   ];
 
